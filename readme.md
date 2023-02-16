@@ -1,21 +1,6 @@
 ## quickphp
 
-This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB.
-
-## Laravel
-
-To use this with Laravel, first create your new Laravel project:
-
-`docker run --rm --volume ./app:/app composer/composer create-project laravel/laravel ./`
-
-## Set permissions
-
-Set permissions:
-
-```
-sudo chown -R www-data:www-data app
-sudo chmod -R 775 app/storage
-```
+This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB and is great for starting a new Laravel project.
 
 ## Configure
 
@@ -25,13 +10,30 @@ Create a `.env` based on the `.env.example` file, and fill out database credenti
 
 ## PHP dependencies
 
-To add PHP dependencies, edit `Dockerfile` and add to the `&& docker-php-ext-install pdo_mysql` line and then rebuild image.
+To include additional PHP dependencies, edit the `Dockerfile` and add to the `&& docker-php-ext-install pdo_mysql` line.
 
-## Build and start
+## Build
 
-`docker compose up -d --build`
+The nginx container includes a volume mount in the app folder, so we will only start the app container for now:
 
-Generate a key and run database migration:
+`docker compose up -d app --build`
+
+Now create your new Laravel project:
+
+`docker compose exec app composer create-project laravel/laravel app`
+
+Now that project is created, you can start the other containers:
+
+`docker compose up -d`
+
+Set permissions:
+
+```
+sudo chown -R www-data:www-data app
+sudo chmod -R 775 app/storage
+```
+
+Generate key and run database migration:
 
 ```
 docker compose exec app php artisan key:generate
@@ -42,7 +44,7 @@ Your new Laravel app is now available at `http://localhost:8080`.
 
 ## Breeze & Blade
 
-If you'd like to add Breeze + Blade stack:
+If you'd also like to add Breeze + Blade stack, just run:
 
 ```
 docker compose exec app composer require laravel/breeze --dev
