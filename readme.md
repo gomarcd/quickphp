@@ -39,3 +39,15 @@ docker compose exec app php artisan migrate
 ```
 
 Your new Laravel app is now available at `http://localhost:8080`.
+
+## Breeze & Blade
+
+If you'd like to add Breeze + Blade stack:
+
+```
+docker compose exec app composer require laravel/breeze --dev
+docker compose exec app php artisan breeze:install
+docker compose exec app php artisan migrate
+docker compose exec app npm install
+docker compose exec app npm run build
+```
