@@ -20,7 +20,7 @@ The nginx container includes a volume mount in the app folder, so we will only s
 
 Now create your new Laravel project:
 
-`docker compose exec app composer create-project laravel/laravel app`
+`docker compose exec app composer create-project laravel/laravel ./`
 
 Now that project is created, you can start the other containers:
 
