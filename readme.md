@@ -77,9 +77,9 @@ Your new Laravel app is now available at `http://localhost:8080`.
 
 Your project is ready to be developed.
 
-You can optionally install [starter kits](https://laravel.com/docs/10.x/starter-kits)
+You can optionally install [starter kits](https://laravel.com/docs/10.x/starter-kits) like Breeze or others.
 
-As an example, you can install Breeze with:
+Install Breeze with:
 
 ```
 docker compose exec app composer require laravel/breeze --dev
