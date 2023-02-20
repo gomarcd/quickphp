@@ -73,6 +73,8 @@ Start other containers:
 
 Your new Laravel app is now available at `http://localhost:8080`.
 
+![screenshot](./screenshot.png)
+
 ## Optional starter kits
 
 Your project is ready to be developed.
@@ -88,5 +90,3 @@ docker compose exec app php artisan migrate
 docker compose exec app npm install
 docker compose exec app npm run build
 ```
-
-![screenshot](./screenshot.png)
