@@ -1,6 +1,8 @@
 ## quickphp
 
-This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB and is great for starting a new Laravel project.
+This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB. This is great for a quickly reproducible Laravel environment without needing to manage these components individually on the host machine.
+
+Most systems with [Docker & Docker Compose](https://docs.docker.com/engine/install/ubuntu/) already installed should be able to just follow these instructions to get started.
 
 ## Configure
 
