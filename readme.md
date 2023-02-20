@@ -2,11 +2,24 @@
 
 This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB. This is great for a quickly reproducible Laravel environment without needing to manage these components individually on the host machine.
 
-Most systems with [Docker & Docker Compose](https://docs.docker.com/engine/install/ubuntu/) already installed should be able to just follow these instructions to get started.
+Most systems with [Docker & Docker Compose](https://docs.docker.com/engine/install/ubuntu/) already installed should be able to just follow these instructions.
+
+Just git clone repo to get started.
 
 ## Configure
 
-Make desired changes to `docker-compose.yml` and `nginx/conf.d/app.conf`. Note that in the app.conf's `fastcgi_pass app:9000;` **app** must correspond to the service name in `docker-compose.yml`.
+Make any desired changes to `docker-compose.yml` and `nginx/conf.d/app.conf`.
+
+Note in `nginx/app.conf`:
+
+`fastcgi_pass **app**:9000;` **must** correspond to service name in `docker-compose.yml`:
+
+```
+  **app**:
+    build:
+     context: .
+     dockerfile: Dockerfile
+```
 
 ## PHP dependencies
 
