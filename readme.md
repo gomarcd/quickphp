@@ -8,14 +8,14 @@ Just git clone repo to get started.
 
 ## Configure
 
-Make any desired changes to `docker-compose.yml` and `nginx/conf.d/app.conf`.
+Make any desired changes to `Dockerfile`, `docker-compose.yml` or `nginx/conf.d/app.conf`.
 
-Note in `nginx/app.conf`:
+Note in `nginx/conf.d/app.conf`:
 
-`fastcgi_pass **app**:9000;` **must** correspond to service name in `docker-compose.yml`:
+`fastcgi_pass app:9000;` "app" **must** correspond to service name in `docker-compose.yml`:
 
 ```
-  **app**:
+  app:
     build:
      context: .
      dockerfile: Dockerfile
