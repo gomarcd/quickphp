@@ -57,7 +57,9 @@ DB_CONNECTION=sqlite
 DB_DATABASE=/var/www/database/db.sqlite
 ```
 
-Then do: `sudo touch app/database/db.sqlite && sudo chown www-data:www-data app/database/db.sqlite`.
+Then do:
+
+`sudo touch app/database/db.sqlite && sudo chown www-data:www-data app/database/db.sqlite`.
 
 Run database migration:
 
