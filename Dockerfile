@@ -10,6 +10,7 @@ RUN . "$NVM_DIR/nvm.sh" && nvm install node && nvm use node
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
+ENV COMPOSER_HOME=~/tmp/composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www

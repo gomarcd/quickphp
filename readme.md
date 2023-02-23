@@ -40,10 +40,10 @@ Create new Laravel project:
 Set permissions:
 
 ```
-sudo chown -R www-data:www-data app
+sudo chown -R $USER:$USER app
+sudo find . -type f -exec chmod 664 {} \;
+sudo find . -type d -exec chmod 775 {} \;
 sudo chmod -R 775 app/storage
-sudo nano app/storage/logs/laravel.log
-sudo chown www-data:www-data app/storage/logs/laravel.log
 ```
 
 ## Database

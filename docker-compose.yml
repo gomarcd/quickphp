@@ -23,6 +23,7 @@ services:
      dockerfile: Dockerfile
     container_name: app
     working_dir: /var/www
+    user: "1000:1000"
     restart: always
     ports:
       - "9000:9000"
@@ -43,7 +44,7 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "3306:3306"
     networks:
       - app
 
