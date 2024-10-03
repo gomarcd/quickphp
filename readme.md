@@ -4,7 +4,7 @@ This docker stack contains PHP, Composer, NodeJS, Nginx & MariaDB. This is great
 
 Most systems with [Docker & Docker Compose](https://docs.docker.com/engine/install/ubuntu/) already installed should be able to just follow these instructions.
 
-Just git clone repo to get started.
+Just git clone repo to get started!
 
 ## Configure
 
